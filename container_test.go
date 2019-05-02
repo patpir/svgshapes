@@ -75,3 +75,18 @@ func TestContainerPolyline(t *testing.T) {
 	}, c.Shapes[0])
 }
 
+func TestContainerRect(t *testing.T) {
+	c := container{}
+	c.Rect(1.5, 2.5, 3.5, 4.5)
+
+	assert.Equal(t, 1, len(c.Shapes))
+	assert.Equal(t, &Rect{
+		StartX:  1.5,
+		StartY:  2.5,
+		Width:   3.5,
+		Height:  4.5,
+		RadiusX: 0.0,
+		RadiusY: 0.0,
+	}, c.Shapes[0])
+}
+

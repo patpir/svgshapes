@@ -8,6 +8,7 @@ type Container interface {
 	Polygon(points ...Point) *Polygon
 	Line(startX, startY, endX, endY float64) *Line
 	Polyline(points ...Point) *Polyline
+	Rect(startX, startY, width, height float64) *Rect
 }
 
 type container struct {
@@ -55,5 +56,16 @@ func (c *container) Polyline(points ...Point) *Polyline {
 	}
 	c.Shapes = append(c.Shapes, polyline)
 	return polyline
+}
+
+func (c *container) Rect(startX, startY, width, height float64) *Rect {
+	rect := &Rect{
+		StartX: startX,
+		StartY: startY,
+		Width:  width,
+		Height: height,
+	}
+	c.Shapes = append(c.Shapes, rect)
+	return rect
 }
 
