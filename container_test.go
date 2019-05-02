@@ -90,3 +90,16 @@ func TestContainerRect(t *testing.T) {
 	}, c.Shapes[0])
 }
 
+func TestContainerEllipse(t *testing.T) {
+	c := container{}
+	c.Ellipse(1.5, 2.5, 3.5, 4.5)
+
+	assert.Equal(t, 1, len(c.Shapes))
+	assert.Equal(t, &Ellipse{
+		CenterX: 1.5,
+		CenterY: 2.5,
+		RadiusX: 3.5,
+		RadiusY: 4.5,
+	}, c.Shapes[0])
+}
+

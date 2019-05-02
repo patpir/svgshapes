@@ -9,6 +9,7 @@ type Container interface {
 	Line(startX, startY, endX, endY float64) *Line
 	Polyline(points ...Point) *Polyline
 	Rect(startX, startY, width, height float64) *Rect
+	Ellipse(centerX, centerY, radiusX, radiusY float64) *Ellipse
 }
 
 type container struct {
@@ -67,5 +68,16 @@ func (c *container) Rect(startX, startY, width, height float64) *Rect {
 	}
 	c.Shapes = append(c.Shapes, rect)
 	return rect
+}
+
+func (c *container) Ellipse(centerX, centerY, radiusX, radiusY float64) *Ellipse {
+	ellipse := &Ellipse{
+		CenterX: centerX,
+		CenterY: centerY,
+		RadiusX: radiusX,
+		RadiusY: radiusY,
+	}
+	c.Shapes = append(c.Shapes, ellipse)
+	return ellipse
 }
 
