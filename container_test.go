@@ -44,3 +44,16 @@ func TestContainerPolygon(t *testing.T) {
 	}, c.Shapes[0])
 }
 
+func TestContainerLine(t *testing.T) {
+	c := container{}
+	c.Line(1.5, 2.5, 3.5, 4.5)
+
+	assert.Equal(t, 1, len(c.Shapes))
+	assert.Equal(t, &Line{
+		StartX: 1.5,
+		StartY: 2.5,
+		EndX:   3.5,
+		EndY:   4.5,
+	}, c.Shapes[0])
+}
+

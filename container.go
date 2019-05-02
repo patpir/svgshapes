@@ -6,6 +6,7 @@ type Container interface {
 	Group() *Group
 	Circle(cx, cy, radius float64) *Circle
 	Polygon(points ...Point) *Polygon
+	Line(startX, startY, endX, endY float64) *Line
 }
 
 type container struct {
@@ -34,5 +35,16 @@ func (c *container) Polygon(points ...Point) *Polygon {
 	}
 	c.Shapes = append(c.Shapes, polygon)
 	return polygon
+}
+
+func (c *container) Line(startX, startY, endX, endY float64) *Line {
+	line := &Line{
+		StartX: startX,
+		StartY: startY,
+		EndX:   endX,
+		EndY:   endY,
+	}
+	c.Shapes = append(c.Shapes, line)
+	return line
 }
 
