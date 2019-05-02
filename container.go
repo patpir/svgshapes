@@ -7,6 +7,7 @@ type Container interface {
 	Circle(cx, cy, radius float64) *Circle
 	Polygon(points ...Point) *Polygon
 	Line(startX, startY, endX, endY float64) *Line
+	Polyline(points ...Point) *Polyline
 }
 
 type container struct {
@@ -46,5 +47,13 @@ func (c *container) Line(startX, startY, endX, endY float64) *Line {
 	}
 	c.Shapes = append(c.Shapes, line)
 	return line
+}
+
+func (c *container) Polyline(points ...Point) *Polyline {
+	polyline := &Polyline{
+		Points: points,
+	}
+	c.Shapes = append(c.Shapes, polyline)
+	return polyline
 }
 

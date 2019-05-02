@@ -57,3 +57,21 @@ func TestContainerLine(t *testing.T) {
 	}, c.Shapes[0])
 }
 
+func TestContainerPolyline(t *testing.T) {
+	c := container{}
+	c.Polyline(
+		Point{ 1.5, 2.5 },
+		Point{ 3.5, 4.5 },
+		Point{ 5.5, 6.5 },
+	)
+
+	assert.Equal(t, 1, len(c.Shapes))
+	assert.Equal(t, &Polyline{
+		Points: []Point{
+			{ 1.5, 2.5 },
+			{ 3.5, 4.5 },
+			{ 5.5, 6.5 },
+		},
+	}, c.Shapes[0])
+}
+
