@@ -103,3 +103,13 @@ func TestContainerEllipse(t *testing.T) {
 	}, c.Shapes[0])
 }
 
+func TestContainerPath(t *testing.T) {
+	c := container{}
+	c.Path().MoveTo(1.5, 2.5).LineTo(3.5, 4.5).ClosePath()
+
+	assert.Equal(t, 1, len(c.Shapes))
+	assert.Equal(t, &Path{
+		PathCommands: "M 1.5 2.5 L 3.5 4.5 Z",
+	}, c.Shapes[0])
+}
+
