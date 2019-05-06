@@ -39,7 +39,7 @@ circle := svgshapes.Circle{
 	Radius:  15,
 }
 polygon := svgshapes.Polygon{
-	points: []svgshapes.Point{
+	Points: []svgshapes.Point{
 		svgshapes.Point{ 10, 20 },
 		svgshapes.Point{ 4.5, 4.5 },
 		svgshapes.Point{ 20, 8 },
