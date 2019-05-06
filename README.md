@@ -12,7 +12,7 @@ Shapes can be created and attached to this document with the document's
 methods `Circle`, `Polygon` etc.
 
 ```go
-doc := svgshapes.NewDocument("-50,-50,50,50")
+doc := svgshapes.NewDocument("-50,-50,100,100")
 doc.Circle(10.5, 25, 15)
 doc.Polygon(
 	svgshapes.Point{ 10, 20 },
@@ -50,7 +50,7 @@ polygon := svgshapes.Polygon{
 Add these shapes to a document by directly modifying the `Shapes` property:
 
 ```go
-doc := svgshapes.NewDocument("-50,-50,50,50")
+doc := svgshapes.NewDocument("-50,-50,100,100")
 doc.Shapes = append(doc.Shapes, circle)
 doc.Shapes = append(doc.Shapes, polygon)
 ```

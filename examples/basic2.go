@@ -21,7 +21,7 @@ func main() {
 		},
 	}
 
-	doc := svgshapes.NewDocument("-50,-50,50,50")
+	doc := svgshapes.NewDocument("-50,-50,100,100")
 	doc.Shapes = append(doc.Shapes, circle)
 	doc.Shapes = append(doc.Shapes, polygon)
 

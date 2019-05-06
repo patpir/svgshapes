@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	doc := svgshapes.NewDocument("-50,-50,50,50")
+	doc := svgshapes.NewDocument("-50,-50,100,100")
 	doc.Circle(10.5, 25, 15)
 	doc.Polygon(
 		svgshapes.Point{ 10, 20 },
