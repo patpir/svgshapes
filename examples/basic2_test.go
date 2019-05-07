@@ -1,4 +1,4 @@
-package main
+package examples
 
 import (
 	"log"
@@ -7,7 +7,7 @@ import (
 	"github.com/patpir/svgshapes"
 )
 
-func main() {
+func ExampleBasic2() {
 	circle := svgshapes.Circle{
 		CenterX: 10.5,
 		CenterY: 25,
@@ -25,9 +25,13 @@ func main() {
 	doc.Shapes = append(doc.Shapes, circle)
 	doc.Shapes = append(doc.Shapes, polygon)
 
-	err := doc.Write(os.Stdout)
+	err := doc.WriteIndent(os.Stdout)
 	if err != nil {
 		log.Fatal(err)
 	}
+	// Output: <svg viewBox="-50,-50,100,100" xmlns="http://www.w3.org/2000/svg">
+	//     <circle cx="10.5" cy="25" r="15"></circle>
+	//     <polygon points="10,20 4.5,4.5 20,8"></polygon>
+	// </svg>
 }
 
