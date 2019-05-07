@@ -25,3 +25,9 @@ func (doc *Document) Write(writer io.Writer) error {
 	return enc.Encode(doc)
 }
 
+func (doc *Document) WriteIndent(writer io.Writer) error {
+	enc := xml.NewEncoder(writer)
+	enc.Indent("", "    ")
+	return enc.Encode(doc)
+}
+
