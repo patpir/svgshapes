@@ -88,3 +88,13 @@ func (c *container) Path() *Path {
 	return path
 }
 
+func (c *container) Text(startX, startY float64, text string) *Text {
+	textEl := &Text{
+		StartX: startX,
+		StartY: startY,
+		Text:   text,
+	}
+	c.Shapes = append(c.Shapes, textEl)
+	return textEl
+}
+
