@@ -61,3 +61,11 @@ func TestShapeStroke(t *testing.T) {
 	checkShapeXML(t, `<shape stroke="red"></shape>`, s)
 }
 
+func TestShapeSetAttribute(t *testing.T) {
+	s := shape{}
+	s.SetAttribute("opacity", "0.5")
+	s.SetAttribute("opacity", "0.75")
+
+	checkShapeXML(t, `<shape opacity="0.75"></shape>`, s)
+}
+
